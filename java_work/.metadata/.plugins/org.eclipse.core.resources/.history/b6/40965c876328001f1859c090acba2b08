@@ -1,0 +1,26 @@
+package kosa.thread;
+
+public class AccountThread extends Thread {
+	SharedArea sharedArea;
+	public AccountThread () {
+		
+	}
+
+	public AccountThread(SharedArea sharedArea) {
+		this.sharedArea = sharedArea;
+	}
+	
+	public void run() {
+		for(int cnt = 0 ; cnt <12 ; cnt++) {
+			try {
+				sharedArea.account1.withdraw(1000000);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			System.out.println("ÀÌ¸ù·æ °èÁÂ : 100¸¸¿ø ÀÎÃâ");
+			sharedArea.account2.deposit(1000000);
+			System.out.println("¼ºÃáÇâ °èÁÂ : 100¸¸¿ø ÀÔ±Ý");
+		}
+	}
+	
+}

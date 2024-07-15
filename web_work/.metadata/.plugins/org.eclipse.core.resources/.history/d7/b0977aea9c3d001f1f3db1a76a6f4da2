@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#photo_area {
+		display :flex;
+		width : 1000px;
+		min-height: 1000px;
+	}
+	
+	#photo_area #photo {
+		background-image: url("http://localhost:8087/CSS/%EB%A7%9D%EA%B7%B8%EB%9F%AC%EC%A7%84%EA%B3%B0.png");
+		width: 500px;
+		height: 500px; 
+		background-repeat: no-repeat;
+	}
+	#photo_area #photo2 {
+		background-image: url("http://localhost:8087/CSS/%EB%A7%9D%EA%B7%B8%EB%9F%AC%EC%A7%84%EA%B3%B02.png");
+		width: 500px;
+		height: 500px; 
+		background-repeat: no-repeat;
+	}
+</style>
+</head>
+<body>
+
+	<section id="photo_area">
+		<div id="photo"></div>
+		<div id="photo2"></div>		
+		<p></p>
+	</section>
+</body>
+</html>

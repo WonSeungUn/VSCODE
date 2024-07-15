@@ -1,0 +1,18 @@
+package kosa.basic;
+
+import java.util.Stack;
+
+public class StackQueue {
+	public static void main(String[] args) {
+		Stack<Integer> stack = new Stack<Integer>(); // stack 자료구조
+		
+		stack.push(1);
+		stack.push(2);
+		stack.push(3);
+		
+		System.out.println("---stack---");
+		while(!stack.isEmpty()) {
+			System.out.println(stack.pop());
+		}
+	}
+}

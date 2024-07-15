@@ -1,0 +1,32 @@
+package kosa.shopping;
+
+public class Category {
+	private int CategoryNum;
+	private String categoryName;
+	
+	public Category() {
+		
+	}
+	
+
+
+
+
+	public Category(int categoryNum, String categoryName) {
+		CategoryNum = categoryNum;
+		this.categoryName = categoryName;
+	}
+
+	
+	public int getCategoryNum() {
+		return CategoryNum;
+	}
+
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	
+	
+}

@@ -1,0 +1,9 @@
+package kosa.thread;
+
+public class SumThread extends Thread {
+
+	@Override
+	public void run() {
+	}
+	
+}

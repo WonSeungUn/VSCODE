@@ -1,0 +1,19 @@
+package kosa.io;
+
+import java.io.File;
+
+public class FileExam {
+	public static void main(String[] args) {
+		String path = "C:\\KCC\\work\\java_work\\Kcc_Java_06_10_12일차";	
+		
+		File f = new File(path);
+		if(f.isDirectory()) {
+			f.listFiles();
+			f.getName();
+			System.out.println("디렉토리 입니다.");
+			System.out.println(f.getName() + " 폴더 입니다.");
+		} else {
+			System.out.println("파일 입니다");
+		}
+	}
+}

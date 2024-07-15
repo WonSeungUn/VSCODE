@@ -1,0 +1,38 @@
+package kosa.io;
+
+
+import java.io.File;
+
+public class FileExam {
+	public static void main(String[] args) {
+		String path = "C:\\KCC\\work\\java_work\\Kcc_Java_06_10_12일차";	
+		
+		File f = new File(path);
+//		if(f.isDirectory()) {
+		//여기서 for문 돌면서 printFile 호츌
+		for(File f1 : f.listFiles()) {
+			if(f1.isDirectory()) {
+				for(File f2 : f1.listFiles()) {
+					System.out.println("디렉:"+f.getName());
+				}
+			}
+		}
+	}else {
+		System.out.println("파일:"+f.getName());
+	}
+	}
+	public static void prinfFile(File f) {
+		if(f.isDirectory()) {
+			//여기서 for문 돌면서 printFile 호츌
+			for(File f1 : f.listFiles()) {
+				if(f1.isDirectory()) {
+					for(File f2 : f1.listFiles()) {
+						System.out.println("디렉:"+f.getName());
+					}
+				}
+			}
+		}else {
+			System.out.println("파일:"+f.getName());
+		}
+	}
+}

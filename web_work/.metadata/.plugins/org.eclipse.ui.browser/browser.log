@@ -1,0 +1,26 @@
+
+7월 08, 2024 19:42:26.83 NEW SESSION
+7월 08, 2024 19:42:26.83 Created TensorFlow Lite XNNPACK delegate for CPU.
+7월 08, 2024 19:57:46.44 [14244:10652:0708/195746.446:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+7월 08, 2024 19:57:46.44 [14244:10652:0708/195746.446:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+7월 08, 2024 20:21:35.55 [14244:10652:0708/202135.555:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.156 s for first_image_paint 0.141 s
+7월 08, 2024 20:21:35.69 [14244:10652:0708/202135.693:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.156 s for first_image_paint 0.141 s
+7월 08, 2024 20:21:35.79 [14244:10652:0708/202135.798:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.156 s for first_image_paint 0.141 s
+7월 08, 2024 20:21:36.42 [14244:10652:0708/202136.427:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.156 s for first_image_paint 0.141 s
+7월 08, 2024 20:21:38.77 [14244:10652:0708/202138.776:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.156 s for first_image_paint 0.141 s
+7월 08, 2024 20:21:39.31 [14244:10652:0708/202139.310:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.156 s for first_image_paint 0.141 s
+7월 08, 2024 20:21:39.77 [14244:10652:0708/202139.775:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.156 s for first_image_paint 0.141 s
+7월 08, 2024 20:21:39.88 [14244:10652:0708/202139.880:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.156 s for first_image_paint 0.141 s
+7월 08, 2024 20:21:42.36 [14244:10652:0708/202142.360:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.156 s for first_image_paint 0.141 s
+7월 08, 2024 20:21:43.77 [14244:10652:0708/202143.778:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.156 s for first_image_paint 0.141 s
+7월 08, 2024 20:21:47.79 [14244:10652:0708/202147.794:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.156 s for first_image_paint 0.141 s
+7월 08, 2024 20:21:54.42 [14244:10652:0708/202154.428:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.156 s for first_image_paint 0.141 s
+7월 08, 2024 20:22:00.60 [14244:10652:0708/202200.606:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.156 s for first_image_paint 0.141 s
+7월 08, 2024 20:22:05.58 [14244:10652:0708/202205.589:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.156 s for first_image_paint 0.141 s
+7월 08, 2024 20:22:21.58 [14244:10652:0708/202221.587:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.156 s for first_image_paint 0.141 s
+7월 08, 2024 20:22:28.57 [14244:10652:0708/202228.575:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.156 s for first_image_paint 0.141 s
+7월 08, 2024 20:22:42.58 [14244:10652:0708/202242.587:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.156 s for first_image_paint 0.141 s
+7월 08, 2024 20:23:03.65 [14244:10652:0708/202303.655:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.156 s for first_image_paint 0.141 s
+7월 08, 2024 20:23:14.58 [14244:10652:0708/202314.582:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.156 s for first_image_paint 0.141 s
+7월 08, 2024 20:23:18.65 [14244:10652:0708/202318.652:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.156 s for first_image_paint 0.141 s
+7월 08, 2024 20:23:18.75 [14244:10652:0708/202318.738:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.156 s for first_image_paint 0.141 s

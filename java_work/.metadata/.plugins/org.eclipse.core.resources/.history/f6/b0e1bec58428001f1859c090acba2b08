@@ -1,0 +1,7 @@
+package kosa.net1;
+
+public class ServerExam {
+	public static void main(String[] args) {
+		
+	}
+}

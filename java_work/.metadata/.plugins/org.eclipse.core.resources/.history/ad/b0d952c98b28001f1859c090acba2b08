@@ -1,0 +1,20 @@
+package kosa.net2;
+
+import java.net.Socket;
+
+public class ServerSender extends Thread {
+	private Socket socket;
+	
+	public ServerSender() {
+	}
+	
+	public ServerSender(Socket socket) {
+		this.socket = socket;
+	}
+	
+	@Override
+	public void run() {
+	
+	}
+
+}

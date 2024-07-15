@@ -1,0 +1,9 @@
+package kosa.basic;
+
+import java.util.Stack;
+
+public class StackQueue {
+	public static void main(String[] args) {
+		Stack<Integer> stack = new Stack<Integer>();
+	}
+}

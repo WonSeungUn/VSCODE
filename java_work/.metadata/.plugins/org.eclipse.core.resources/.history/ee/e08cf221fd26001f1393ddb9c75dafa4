@@ -1,0 +1,16 @@
+package kosa.io;
+
+import java.io.FileReader;
+
+public class CopyExam {
+	public static void main(String[] args) {
+		FileReader reader = null;
+		char[] ar = new char[100];
+		
+		try {
+			reader = new FileReader("poem2.txt");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

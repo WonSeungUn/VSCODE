@@ -1,0 +1,318 @@
+package kosa.shopping;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class ShopManager {
+	private List<Order> orders;
+	private List<Customer> customers;
+	private Customer currentCust;
+	private List<Product> products;
+	private Scanner sc;
+
+	public ShopManager() {
+		sc = new Scanner(System.in);
+		customers = new ArrayList<Customer>();
+		products = new ArrayList<Product>();
+		orders = new ArrayList<Order>();
+	}
+
+	public ShopManager(Customer currentCust) {
+		this.currentCust = currentCust;
+	}
+
+	// 고객 등록 메소드
+	public void addCustomer() {
+		System.out.println("고객 등록을 선택하셨습니다.");
+		System.out.println("고객님의 이름을 입력해주세요");
+		String name = sc.nextLine();
+		System.out.println("고객님의 나이를 입력해주세요");
+		int age = Integer.parseInt(sc.nextLine());
+		String pattern = "yyyy/MM/dd";
+		DateFormat df = new SimpleDateFormat(pattern);
+		Scanner sc = new Scanner(System.in);
+		System.out.println("고객님의 생년월일을 입력해주세요. 단 생년월일의 경우 yyyy/MM/dd 형식으로 입력해주세요.");
+		Date birth = null;
+
+		while (sc.hasNextLine()) {
+			try {
+				birth = df.parse(sc.nextLine());
+				break;
+			} catch (Exception e) {
+				System.out.println("다시 입력하세요");
+			}
+		}
+		System.out.println("고객님의 새로운 ID를 입력해주세요");
+		String id = sc.nextLine();
+		System.out.println("고객님의 성별을 입력해주세요");
+
+		String sex = "";
+		do {
+			System.out.println("남 혹은 여 만 입력하실 수 있습니다.");
+			sex = sc.nextLine();
+		} while (!(sex.equals("남") || sex.equals("여")));
+
+		customers.add(new Customer(name, age, birth, id, sex));
+	} // 고객 등록 메소드 end
+
+	// 유저 선택 메소드
+	public void selectUser() {
+		System.out.println("유저 선택을 고르셨습니다.");
+		if (customers.size() == 0) {
+			System.out.println("등록된 유저가 없습니다. 고객 등록 후에 다시 시도해주세요");
+			return;
+		}
+		for (int i = 0; i < customers.size(); i++) {
+			System.out.print(i + 1 + "." + customers.get(i).getName() + "\t" + "\n");
+		}
+		System.out.println("어떤 유저로 선택하시겠습니까?");
+		String select = sc.nextLine();
+		for (int i = 0; i < customers.size(); i++) {
+			this.currentCust = customers.get(Integer.parseInt(select) - 1);
+		}
+		System.out.println(customers.get(Integer.parseInt(select) - 1).getName() + "님으로 선택하셨습니다.");
+
+	} // 유저 선택 메소드 end
+
+	// 상품 등록
+	public void addProduct() {
+		System.out.println("상품 등록을 선택하셨습니다.");
+		System.out.println("상품의 카테고리를 선택해주세요");
+		System.out.println("1. 의류 2. 전자기기 3. 뷰티 4. 주방용품");
+		String select = sc.nextLine();
+		Calendar gc = Calendar.getInstance();
+		switch (select) {
+		case "1":
+			System.out.println("의류 제품의 이름을 입력해주세요.");
+			String cName = sc.nextLine();
+			System.out.println(cName + " 의 가격을 입력해주세요");
+			int cPrice = Integer.parseInt(sc.nextLine());
+			System.out.println(cName + " 의 수량을 입력해주세요");
+			int cTotalCount = Integer.parseInt(sc.nextLine());
+
+			products.add(new Product(cName, cPrice, gc.getTime(), new Category(1, "의류"), cTotalCount));
+			System.out.println(cName + " 상품이 의류 카테고리에 등록되었습니다.");
+			break;
+		case "2":
+			System.out.println("전자기기 제품의 이름을 입력해주세요.");
+			String eName = sc.nextLine();
+			System.out.println(eName + " 의 가격을 입력해주세요");
+			int ePrice = Integer.parseInt(sc.nextLine());
+			System.out.println(eName + " 의 수량을 입력해주세요");
+			int eTotalCount = Integer.parseInt(sc.nextLine());
+
+			products.add(new Product(eName, ePrice, gc.getTime(), new Category(2, "전자기기"), eTotalCount));
+			System.out.println(eName + " 상품이 전자기기 카테고리에 등록되었습니다.");
+			break;
+		case "3":
+			System.out.println("뷰티 제품의 이름을 입력해주세요.");
+			String bName = sc.nextLine();
+			System.out.println(bName + " 의 가격을 입력해주세요");
+			int bPrice = Integer.parseInt(sc.nextLine());
+			System.out.println(bName + " 의 수량을 입력해주세요");
+			int bTotalCount = Integer.parseInt(sc.nextLine());
+
+			products.add(new Product(bName, bPrice, gc.getTime(), new Category(3, "뷰티"), bTotalCount));
+			System.out.println(bName + " 상품이 뷰티 카테고리에 등록되었습니다.");
+			break;
+		case "4":
+			System.out.println("주방용품 제품의 이름을 입력해주세요.");
+			String kName = sc.nextLine();
+			System.out.println(kName + " 의 가격을 입력해주세요");
+			int kPrice = Integer.parseInt(sc.nextLine());
+			System.out.println(kName + " 의 수량을 입력해주세요");
+			int kTotalCount = Integer.parseInt(sc.nextLine());
+
+			products.add(new Product(kName, kPrice, gc.getTime(), new Category(4, "주방용품"), kTotalCount));
+			System.out.println(kName + " 상품이 주방용품 카테고리에 등록되었습니다.");
+			break;
+		}
+
+	} // 상품 등록 메소드 end
+
+	// 상품 카테고리 목록 보기 메소드
+	public void categoryList() {
+		System.out.println("상품 카테고리 목록 보기를 선택하셨습니다.");
+		System.out.println("어떤 카테고리 목록을 보시겠습니까?");
+		System.out.println("1. 의류 2. 전자기기 3. 뷰티 4. 주방용품 5. 전체보기");
+		String select = sc.nextLine();
+		Product p = new Product();
+		switch (select) {
+		case "1":
+//			Stream<Product> List = products.stream();
+//			List<Product> stream = List.filter(p -> p.getCategory().getCategoryNum() == (Integer.parseInt(select)))
+//					.collect(Collectors.toList());
+//			
+//			for(Product p : stream) {
+//				p.productShow();
+//			}
+			p.showCategory(products, select);
+			break;
+		case "2":
+//			Iterator<Product> eIter = products.iterator();
+//			while (eIter.hasNext()) {
+//				Product e = eIter.next();
+//				if (e.getCategory().getCategoryName().equals("전자기기")) {
+//					e.productShow();
+//				}
+//			}
+			p.showCategory(products, select);
+			break;
+		case "3":
+//			Iterator<Product> bIter = products.iterator();
+//			while (bIter.hasNext()) {
+//				Product b = bIter.next();
+//				if (b.getCategory().getCategoryName().equals("뷰티")) {
+//					b.productShow();
+//				}
+//			}
+			p.showCategory(products, select);
+			break;
+		case "4":
+//			Iterator<Product> kIter = products.iterator();
+//			while (kIter.hasNext()) {
+//				Product k = kIter.next();
+//				if (k.getCategory().getCategoryName().equals("주방용품")) {
+//					k.productShow();
+//				}
+//			}
+			p.showCategory(products, select);
+			break;
+		case "5":
+			for (Product p1 : products) {
+				p1.productShow();
+			}
+			break;
+
+		}
+
+	} // 상품 카테고리 목록 메소드 end
+
+	// 상품 주문 메소드
+	public void orderProduct(Customer currentCust) {
+		if (currentCust == null) {
+			System.out.println("유저 등록 후 다시 주문해주세요");
+			return;
+		}
+		if (products.isEmpty()) {
+			System.out.println("등록된 제품이 없습니다.");
+			return;
+		}
+		System.out.println("상품 주문을 선택하셨습니다.");
+		List<OrderItem> orderItems = new ArrayList<OrderItem>();
+		int orderNum = 0;
+		int orderItemNum = 0;
+		while (true) {
+			System.out.println("1. 의류 2. 전자기기 3. 뷰티 4. 주방용품 5. 주문 완료");
+			System.out.print("어떤 카테고리 목록을 보시겠습니까?");
+			String menu = sc.nextLine();
+			switch (menu) {
+			case "1":
+				while (true) {
+					OrderItem item = new OrderItem().createOrderItem(products, menu, orderItemNum++);
+					System.out.println("주문이 완료되었습니다. 의류 상품을 더 주문하시겠습니까?");
+					System.out.println("1. YES 2. NO");
+					int selectNum = Integer.parseInt(sc.nextLine());
+					if (selectNum == 2) {
+						orderItems.add(item);
+						System.out.println("상품 주문 메뉴로 이동하겠습니다.");
+						break;
+					}
+				}
+				break;
+			case "2":
+				while (true) {
+					OrderItem item = new OrderItem().createOrderItem(products, menu, orderItemNum++);
+					System.out.println("주문이 완료되었습니다. 전자기기 상품을 더 주문하시겠습니까?");
+					System.out.println("1. YES 2. NO");
+					int selectNum = Integer.parseInt(sc.nextLine());
+					if (selectNum == 2) {
+						orderItems.add(item);
+						System.out.println("상품 주문 메뉴로 이동하겠습니다.");
+						break;
+					}
+				}
+				break;
+			case "3":
+				while (true) {
+					OrderItem item = new OrderItem().createOrderItem(products, menu, orderItemNum++);
+					System.out.println("주문이 완료되었습니다. 뷰티 상품을 더 주문하시겠습니까?");
+					System.out.println("1. YES 2. NO");   
+					int selectNum = Integer.parseInt(sc.nextLine());
+					if (selectNum == 2) {
+						orderItems.add(item);
+						System.out.println("상품 주문 메뉴로 이동하겠습니다.");
+						break;
+					}
+				}
+				break;
+			case "4":
+				while (true) {
+					OrderItem item = new OrderItem().createOrderItem(products, menu, orderItemNum++);
+					System.out.println("주문이 완료되었습니다. 주방용품 상품을 더 주문하시겠습니까?");
+					System.out.println("1. YES 2. NO");
+					int selectNum = Integer.parseInt(sc.nextLine());
+					if (selectNum == 2) {
+						orderItems.add(item);
+						System.out.println("상품 주문 메뉴로 이동하겠습니다.");
+						break;
+					}
+				}
+				break;
+			case "5":
+				if (orderItems.isEmpty()) {
+					System.out.println("주문 후에 주문 완료를 선택해주세요. 메뉴로 돌아갑니다.");
+					return;
+				}
+				Order order = new Order(orderNum++, orderItems, currentCust);
+				orders.add(order);
+				System.out.println("주문을 종료하겠습니다.");
+				return;
+			}
+		}
+	}
+
+	// 나의 주문 목록 보여주는 메소드
+	public void showidvOrder(Customer currentCust) {
+		if (currentCust == null) {
+			System.out.println("유저 등록 후 다시 시도해주세요.");
+			return;
+		}
+		if (orders.isEmpty()) {
+			System.out.println("주문 내역이 존재하지 않습니다.");
+		}
+		Order order = new Order();
+		System.out.println("나의 주문목록 보기를 선택하셨습니다.");
+		for (int i = 0; i < orders.size(); i++) {
+			order = orders.get(i);
+			if (order.getCustomer().equals(currentCust)) {
+				order.printOrder(currentCust);
+			} else {
+				System.out.println("주문 내역이 없습니다.");
+			}
+		}
+	} // 나의 주문목록 메소드 end
+
+	// 상품찾기 메소드
+	public void findProduct(String name) {
+		List<Product> find = products.stream().filter(product -> product.getProductName().contains(name))
+				.collect(Collectors.toList());
+		for (Product p : find) {
+			p.productShow();
+		}
+	} // 상품 찾기 메소드 end
+
+	public Customer getCurrentCust() {
+		return currentCust;
+	}
+
+}

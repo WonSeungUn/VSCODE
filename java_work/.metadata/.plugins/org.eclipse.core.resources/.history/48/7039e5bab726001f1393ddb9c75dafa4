@@ -1,0 +1,63 @@
+package kosa.shopping;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Order {
+	private int orderNum;
+	private List<OrderItem> items;
+	private Customer customer;
+
+	public Order() {
+		items = new ArrayList<OrderItem>();
+	}
+
+	public Order(int orderNum, List<OrderItem> items, Customer customer) {
+		this.orderNum = orderNum;
+		this.items = items;
+		this.customer = customer;
+		setOrderItem();
+	}
+
+	// OrderItem 의 order 객체 생성
+	private void setOrderItem() {
+		for (OrderItem oi : this.items) {
+			oi.addOrder(this);
+		}
+
+	}
+
+	// 주문목록 출력
+	public void printOrder(Customer customer) {
+		if (this.customer == customer) {
+
+			for (OrderItem oi : this.items) {
+				System.out.println("================================================================");
+				System.out.println("상품이름 : " + oi.getProduct().getProductName());
+				System.out.println("상품가격 : " + oi.getProduct().getPrice());
+				System.out.println("상품수량 : " + oi.getCount());
+				System.out.println("총 가격 : " + oi.getOrderPrice());
+				System.out.println("================================================================");
+				System.out.println();
+			}
+		}
+	}
+
+	public int getOrderNum() {
+		return orderNum;
+	}
+
+	public List<OrderItem> getItems() {
+		return items;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	@Override
+	public String toString() {
+		return "Order [orderNum=" + orderNum + ", items=" + items + ", customer=" + customer + "]";
+	}
+
+}

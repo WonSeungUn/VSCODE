@@ -1,0 +1,13 @@
+package kosa.thread;
+
+public class PrintThread extends Thread {
+	SharedArea sharedArea;
+	PrintThread() {
+		
+	}
+	public PrintThread(SharedArea sharedArea) {
+		this.sharedArea = sharedArea;
+	}
+	
+	
+}

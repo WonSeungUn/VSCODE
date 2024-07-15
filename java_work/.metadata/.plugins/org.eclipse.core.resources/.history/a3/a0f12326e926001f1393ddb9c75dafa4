@@ -1,0 +1,111 @@
+package kosa.shopping;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class Product {
+	private String productName;
+	private int price;
+	private Date reg;
+	private Category category;
+	private int totalCount;
+
+	public Product() {
+
+	}
+
+	public Product(String productName, int price, Date reg, Category category, int totalCount) {
+		this.productName = productName;
+		this.price = price;
+		this.reg = reg;
+		this.category = category;
+		this.totalCount = totalCount;
+	}
+
+	// 상품 리스트 나열
+	public void productShow() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String reg = sdf.format(this.reg);
+		System.out.println("-------------------------------------");
+		System.out.println("상품이름 : " + productName);
+		System.out.println("상품가격 : " + price);
+		System.out.println("등록날짜 : " + reg);
+		System.out.println("상품 카테고리 : " + category.getCategoryName());
+		if(this.totalCount == 0) {
+			System.out.println("Sold Out");
+		}else {
+			System.out.println("남은 수량 : " + totalCount);
+		}
+		System.out.println("-------------------------------------");
+	} // 상품 리스트 나열 end
+
+	public int getTotalCount() {
+		return totalCount;
+	}
+
+	// 총수량 계산 
+	public int setTotalCount(int totalCount) {
+		boolean b = true;
+		while (b) {
+			if (totalCount > this.totalCount) {
+				System.out.println("상품의 재고량보다 더 많이 주문하실 수 없습니다");
+				Scanner sc = new Scanner(System.in);
+				totalCount = Integer.parseInt(sc.nextLine());
+			} else {
+				this.totalCount -= totalCount;
+				b = false;
+			}
+			if(b == false) {
+				break;
+			}
+		}
+		return totalCount;
+	} // 총수량 계산 메소드 end
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public Date getReg() {
+		return reg;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [productName=" + productName + ", price=" + price + ", reg=" + reg + ", category=" + category
+				+ ", totalCount=" + totalCount + "]";
+	}
+
+	public void showCategory(List<Product> products, String select) {
+		switch (select) {
+		case value:
+			
+			break;
+
+		default:
+			break;
+		}
+		Stream<Product> List = products.stream();
+		List<Product> stream = List.filter(p -> p.getCategory().getCategoryNum() == (Integer.parseInt(select)))
+				.collect(Collectors.toList());
+		
+		for(Product p : stream) {
+			p.productShow();
+		}
+	}
+	
+	
+
+}

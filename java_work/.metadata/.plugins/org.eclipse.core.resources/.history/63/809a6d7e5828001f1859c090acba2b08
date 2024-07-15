@@ -1,0 +1,11 @@
+package kosa.thread;
+
+public class ThreadExam {
+	public static void main(String[] args) {
+		Thread thread = new DigitThread();
+		for(char ch ='A'; ch<='Z'; ch++) {
+			System.out.println(ch);
+			thread.start();
+		}
+	}
+}

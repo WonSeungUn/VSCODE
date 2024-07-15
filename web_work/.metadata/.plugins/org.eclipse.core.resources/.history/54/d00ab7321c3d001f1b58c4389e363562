@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="author" content="WonSeungEon">
+<meta charset="UTF-8">
+<title>HTML 숙제</title>
+<style type="text/css">
+#divParent {
+	border: 1px solid #000;
+}
+
+</style>
+</head>
+
+<body>
+	<header>
+		<h1>오늘의 교훈</h1>
+	</header>
+	<ol>
+		<li><mark>공부는 미루지말자 강조! 하이라이트!!</mark></li>
+		<li><strong>할 수 있다면 예습을 해보자 글씨 굵게!!</strong></li>
+		<li><span style="color: red;'">복습은 꾸준히 하자! 빨강!!!</span></li>
+	</ol>
+
+	<div id="divParent">
+		<p >ul : 순서가 없는 리스트를 만들 때 사용한다!</p>
+		<p >ol : 순서가 있는 리스트를 만들 때 사용한다!</p>
+		<p >li : 리스트 항목을 나타내며, ul 또는 ol 요소 내에서 사용된다. </p>
+	</div>
+
+	<ul>
+		<li>FRONT-END</li>
+		<li>BACK-END</li>
+		<li>DB</li>
+	</ul>
+
+	<ol start="4">
+		<li>ol 에서 start를 통해 시작점을 정할 수 있다!</li>
+		<li>교훈은 계속된다! 공부는 해야할 때 하자!</li>
+		<li>공부는 DEEP하게!! 해야된다!</li>
+		<li>공부를 할거면 1시간 이상은 하자!</li>
+	</ol>
+
+	<ol style="list-style-type: upper-alpha;">
+		<li>A부터 C까지 나올려나?!</li>
+		<li>B가 나와야해!!</li>
+		<li>C가 나와야해! 근데 다 소문자여야 해!!</li>
+	</ol>
+
+	<ol style="list-style-type: Lower-roman;">
+		<li>로마 표기법을 써보자! 맞나...???</li>
+		<li>ii 나오자아아아</li>
+		<li>iii가 나와야 합니다!</li>
+	</ol>
+	<br>
+	
+	<section style="border: 1px solid #000;">
+	<p>dl은 "정의 리스트를 감싸는 컨테이너 요소이다!"</p>
+	<p>dd는 "정의될 용어를 나타낸다!"</p>
+	<p>dt는 "용어에 대한 설명을 나타낸다!"</dd>
+	</section>
+	<dl>
+		<dt>HTML</dt>
+		<dd>웹 페이지의 구조를 정의하는 마크업 언어입니다!!!!!</dd>
+
+		<dt>CSS</dt>
+		<dd>웹 페이지의 스타일을 정의하는 스타일시트 언어입니다!!!!!</dd>
+
+		<dt>JavaScript</dt>
+		<dd>웹 페이지의 동작을 제어하는 프로그래밍 언어입니다!!!</dd>
+	</dl>
+	
+	<section style="border: 1px solid #000;">
+		<h1>TABLE</h1>
+		<p> 제목은 caption 태그 안에 넣으면 된다!</p>
+		<p> caption은 테이블 당 하나만!!!</p>
+		<p>테이블은 thead, tbody, tfoot이 있다!</p>
+		<p>thead안에는 머리글(th)!</p>
+		<p> tbody 안에는 td!</p>
+		<p> 둘 다 공통적으로 tr! 안에 들어가자!!</p>		
+	</section>
+	<br>
+	
+	<table border="1">
+		<thead>
+			<tr>
+				<th></th>
+				<th>이름</th>
+				<th>연락처</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+			<td rowspan="3">1</td>
+			<td colspan="2">원승언</td>
+			</tr>
+			<tr>
+			<td>원승언</td>
+			<td>010-2572-4233</td>
+			</tr>
+			<tr>
+			<td>원승언</td>
+			<td>010-2572-4233</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<section style="border: 1px solid #000;">
+		<p> a태그를 사용하여 하나의 문서에서 다른 문서로 이동할 수 있다!</p>
+		<p> a태그의 href를 이용해 링크를 타고 다른 페이지로 이동할 수 있다!</p>
+		<p> a태그의 target에서 _blank이면 해당 페이지로 새로운 페이지가 생성되어 이동한다.</p>
+		<p> a태그의 target에서 _
+	</section>
+		
+		<a target="_self" href="naver.com"></a>
+</body>
+</html>

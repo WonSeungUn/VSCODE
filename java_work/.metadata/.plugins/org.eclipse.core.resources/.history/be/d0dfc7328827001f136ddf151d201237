@@ -1,0 +1,19 @@
+package kosa.io;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+public class BufferExam {
+	
+	public static void main(String[] args) {
+		// Scanner => 키보드로부터 데이터 입력받음
+		// System.in => InputStream(바이트스트림) 과 연결되어 있음.
+		// 문자스트림으로 바꾸고 싶다면 InputStreamReader 사용
+		// => BufferedReader => 키보드로부터 입력받은 데이터를 연결받음 => 필터스트림 => 기존의 스트림과 연결하여 사용해야함.
+		
+		InputStream in = System.in;
+		InputStreamReader isr = new InputStreamReader(in);
+		BufferedReader br = new BufferedReader(isr);
+	}
+}

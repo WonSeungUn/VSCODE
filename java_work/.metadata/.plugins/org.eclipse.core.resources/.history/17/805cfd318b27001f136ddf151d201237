@@ -1,0 +1,35 @@
+package kosa.io;
+
+import java.io.ObjectOutputStream;
+
+public class Main {
+
+	Member m;
+	
+	// 按眉 流纺拳
+	public void insert() {
+		m = new Member("全辨悼", 20);
+		ObjectOutputStream oos = null;
+		
+		try {
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				
+			} catch (Exception e2) {
+			}
+		}
+	}
+	
+	
+	// 按眉 开流纺拳
+	public void show() {
+		
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+}

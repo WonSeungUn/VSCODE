@@ -1,0 +1,11 @@
+package kosa.net2;
+
+public class ServerReceive extends Thread {
+
+	@Override
+	public void run() {
+	}
+	
+	
+
+}

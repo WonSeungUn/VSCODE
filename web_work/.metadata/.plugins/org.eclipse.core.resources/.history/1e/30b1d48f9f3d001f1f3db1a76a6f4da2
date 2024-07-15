@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#photo_area {
+		display :flex;
+		justify-content : space-between;
+		width : 1000px;
+		min-height: 500px;
+	}
+	
+	#photo1_area #photo1 {
+		background-image: url("http://localhost:8087/CSS/%EB%A7%9D%EA%B7%B8%EB%9F%AC%EC%A7%84%EA%B3%B0.png");
+		width: 450px;
+		height: 500px; 
+		background-repeat: no-repeat;
+		background-size: 450px 500px;
+	}
+	#photo2_area #photo2 {
+		background-image: url("http://localhost:8087/CSS/%EB%A7%9D%EA%B7%B8%EB%9F%AC%EC%A7%84%EA%B3%B02.png");
+		width: 450px;
+		height: 500px; 
+		background-repeat: no-repeat;
+		background-size: 450px 500px;
+	}
+	.name {
+		font-size: 1.5em;
+		font-family: fantasy;
+		letter-spacing: 1.2em;
+	}
+	.char_area .char, .char_area .char_list >.char_ele {
+		font-size : 1.5em;
+	}
+	
+</style>
+</head>
+<body>
+
+	<section id="photo_area">
+		<div id="photo1_area">
+			<div id="photo1"></div>
+			<p class="name">이름 : 망그러진 곰</p>
+			<div class="char_area">
+			<p class="char">특징</p>
+			<ul class="char_list">
+				<li class="char_ele">카카오톡 이모티콘</li>
+				<li class="char_ele">귀여움</li>
+				<li class="char_ele">인기 많음</li>
+				<li class="char_ele">키가 작다</li>
+			</ul>
+			</div>
+		</div>
+		
+		<div id="photo2_area">
+			<div id="photo2"></div>		
+			<p class="name">이름 : 망그러진 곰</p>
+			<div class="char_area">
+			<p class="char">특징</p>
+			<ul class="char_list">
+				<li class="char_ele">카카오톡 이모티콘</li>
+				<li class="char_ele">귀여움</li>
+				<li class="char_ele">인기 많음</li>
+				<li class="char_ele">키가 작다</li>
+			</ul>
+			</div>
+		</div>	
+	</section>
+</body>
+</html>

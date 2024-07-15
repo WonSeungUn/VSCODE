@@ -1,0 +1,9 @@
+package kosa.parellel;
+
+import java.util.Random;
+
+public class ParellelExam {
+	public static void main(String[] args) {
+		Random random = new Random();
+	}
+}

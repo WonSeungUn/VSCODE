@@ -1,0 +1,15 @@
+package kosa.thread;
+
+public class SumThread extends Thread {
+
+	@Override
+	public void run() {
+		
+		int t1 = 0;
+		for(int i =1 ; i<=50; i++) {
+			t1 +=i;
+		}
+		System.out.println(t1);
+	}
+	
+}

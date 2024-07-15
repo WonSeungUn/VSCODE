@@ -1,0 +1,9 @@
+package kosa.basic;
+
+import java.util.ArrayList;
+
+public class SortExam02 {
+	public static void main(String[] args) {
+		List<Person> list = new ArrayList<Person>();
+	}
+}

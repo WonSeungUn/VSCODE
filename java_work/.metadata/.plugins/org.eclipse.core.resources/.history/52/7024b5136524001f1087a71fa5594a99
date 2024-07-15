@@ -1,0 +1,25 @@
+package kosa.data;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class MapExam {
+	public static void main(String[] args) {
+		// Map : (key, value), (key, value), ..... => HashMap
+		Map<String, String> map = new HashMap<String, String>(); // Map은 Generic이 붙으면 복잡해진다.
+		map.put("1", "KIA");
+		map.put("2", "LG");
+		map.put("3", "Samsung");
+		
+		System.out.println("요소의 사이즈 : " + map.size());
+		
+		if(map.containsValue("LG")) {
+			map.remove("2");
+		}
+		System.out.println("요소의 사이즈 : " + map.size());
+		
+		
+		System.out.println("삼성팀 : " +map.get("3"));
+		
+	}
+}

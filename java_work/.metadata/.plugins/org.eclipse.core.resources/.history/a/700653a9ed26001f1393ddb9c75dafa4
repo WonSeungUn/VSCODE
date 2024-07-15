@@ -1,0 +1,109 @@
+package kosa.shopping;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
+public class OrderItem {
+	private int orderItemNum;
+	private Product product;
+	private Order order;
+	private int orderPrice;
+	private int count;
+	
+	public OrderItem() {
+		
+	}
+	
+	public OrderItem createOrderItem(List<Product> products, String menu, int orderItemNum) {
+		
+		Iterator<Product> iter = products.iterator();
+		Scanner sc = new Scanner(System.in);
+		List<Product> filterCategory = new ArrayList<Product>();
+		while (iter.hasNext()) {
+			Product f = iter.next();
+			if (f.getCategory().getCategoryNum() == (Integer.parseInt(menu))) {
+				filterCategory.add(f);
+				System.out.println(f.getProductName() + "의 상품번호 : " + filterCategory.indexOf(f));
+				f.productShow();
+			}
+			filterCategory.stream().filter(f -> f.getCategory().getCategoryNum() == (Integer.parseInt(menu)).forEach(f::productShow()));
+		}
+		if (filterCategory.isEmpty()) {
+			System.out.println("등록된  상품이 없습니다. 메뉴로 돌아갑니다");
+			return null;
+		}
+
+		System.out.println("주문하실 상품의 상품번호을 입력해주세요");
+		System.out.println("만약 모든 상품이 Sold Out일 경우 목록에 있는 상품번호 중 아무거나 누르시면 주문 메뉴로 돌아갑니다.");
+		int sOrder = Integer.parseInt(sc.nextLine());
+		Product oProduct = new Product();
+		while (true) {
+			if (sOrder > filterCategory.size() - 1 || sOrder < 0) {
+				System.out.println("해당 번호의 상품번호는 존재하지 않습니다.");
+				sOrder = Integer.parseInt(sc.nextLine());
+			} else {
+				oProduct = filterCategory.get(sOrder);
+				break;
+			}
+		}
+		if (filterCategory.get(sOrder).getTotalCount() == 0) {
+			System.out.println("해당 제품은 재고량 부족으로 주문하실 수 없습니다. 주문 메뉴로 돌아갑니다.");
+			
+		}
+
+		System.out.println("주문하실 수량을 입력해주세요");
+		int oCount = Integer.parseInt(sc.nextLine());
+
+		oCount = oProduct.setTotalCount(oCount);
+
+		int orderPrice = oProduct.getPrice() * oCount;
+		System.out.println(new OrderItem(orderItemNum, oProduct, orderPrice, oCount));
+		return new OrderItem(orderItemNum, oProduct, orderPrice, oCount);
+	}
+	
+	public void addOrder (Order order) {
+		this.order = order;
+	}
+
+
+	public OrderItem(int orderItemNum, Product product, int orderPrice, int count) {
+		this.orderItemNum = orderItemNum;
+		this.product = product;
+		this.orderPrice = orderPrice;
+		this.count = count;
+	}
+
+	public int getOrderItemNum() {
+		return orderItemNum;
+	}
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public Order getOrder() {
+		return order;
+	}
+
+
+	public int getOrderPrice() {
+		return orderPrice;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	@Override
+	public String toString() {
+		return "OrderItem [orderItemNum=" + orderItemNum + ", product=" + product + " +  orderPrice="
+				+ orderPrice + ", count=" + count + "]";
+	}
+	
+	
+	
+}

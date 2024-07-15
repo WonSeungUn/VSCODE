@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<th colspan="2">날짜</th>
+				<th rowspan="3">메뉴</th>
+				<th></th>
+				<th></th>
+			</tr>
+			<tr>
+				<th></th>
+				<th>아침</th>
+				<th>점심</th>
+				<th>저녁</th>
+			</tr>
+		</thead>
+	
+	</table>
+</body>
+</html>

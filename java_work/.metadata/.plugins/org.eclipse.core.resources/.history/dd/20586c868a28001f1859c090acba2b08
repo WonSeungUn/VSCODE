@@ -1,0 +1,10 @@
+package kosa.net2;
+
+import java.net.ServerSocket;
+
+public class ServerExam {
+	public static void main(String[] args) {
+		ServerSocket serverSocket = null;
+		Socket
+	}
+}

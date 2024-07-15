@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Account.java&apos; to &apos;Kcc_Java_06_11_13일차/src/kosa.thread&apos;&#x0D;&#x0A;- Original project: &apos;Kcc_Java_05_28_4일차&apos;&#x0D;&#x0A;- Destination element: &apos;Kcc_Java_06_11_13일차/src/kosa.thread&apos;&#x0D;&#x0A;- Original element: &apos;kosa.oop.Account.java&apos;" description="Copy compilation unit" destination="=Kcc_Java_06_11_13일차/src&lt;kosa.thread" element1="/src&lt;kosa.oop{Account.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1718158509524" units="1" version="1.0"/>
+</session>

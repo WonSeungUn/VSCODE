@@ -1,0 +1,16 @@
+package kosa.parellel;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+public class ParellelExam {
+	public static void main(String[] args) {
+		Random random = new Random();
+		
+		List<Integer> scores = new ArrayList<>();
+		for(int i = 0 ; i<10000000 ; i++) {
+			scores.add(random.nextInt(101));
+		}
+	}
+}

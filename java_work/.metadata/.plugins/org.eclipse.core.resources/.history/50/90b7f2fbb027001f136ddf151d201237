@@ -1,0 +1,9 @@
+package kosa.io;
+
+public class FileMission {
+	public static void main(String[] args) {
+		// 1. 바이트스트림을 이용하여 이미지 파일을 복사해보자.
+		String source = "\"C:\\KCC\\work\\java_work\\스크린샷 2024-06-07 180000.png\"";
+		String dest = "C:\\Users\\KOSA\\OneDrive\\사진\\카메라 앨범";
+	}
+}

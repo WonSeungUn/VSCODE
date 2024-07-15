@@ -1,0 +1,15 @@
+package kosa.thread;
+
+public class AccountThread extends Thread {
+	Account account;
+	
+	public AccountThread () {
+		
+	}
+
+	public AccountThread(Account account) {
+		this.account = account;
+	}
+	
+	
+}

@@ -1,0 +1,17 @@
+package kosa.io;
+
+import java.io.FileReader;
+
+public class KosaReader {
+	public static void main(String[] args) {
+		// 파일(poem.txt)에 잇는 문자열 데이터 읽어오기
+		FileReader reader = null;
+		
+		
+		try {
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

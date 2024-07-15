@@ -1,0 +1,6 @@
+package kosa.net2;
+
+public class ClientExam {
+	public static void main(String[] args) {
+	}
+}

@@ -1,0 +1,7 @@
+0:0:0:0:0:0:0:1 - - [10/Jul/2024:09:22:24 +0900] "GET /CSS/bootstrap/ch02/grid.html HTTP/1.1" 200 2451
+0:0:0:0:0:0:0:1 - - [10/Jul/2024:09:22:24 +0900] "GET /CSS/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 99961
+0:0:0:0:0:0:0:1 - - [10/Jul/2024:09:24:28 +0900] "GET /CSS/bootstrap/ch02/grid-sample1-1.html HTTP/1.1" 200 2946
+0:0:0:0:0:0:0:1 - - [10/Jul/2024:09:24:28 +0900] "GET /CSS/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [10/Jul/2024:09:25:04 +0900] "GET /CSS/bootstrap/ch02/grid-sample1.html HTTP/1.1" 200 2916
+0:0:0:0:0:0:0:1 - - [10/Jul/2024:09:25:53 +0900] "GET /CSS/bootstrap/ch02/grid-sample2.html HTTP/1.1" 200 3120
+0:0:0:0:0:0:0:1 - - [10/Jul/2024:09:25:53 +0900] "GET /CSS/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -

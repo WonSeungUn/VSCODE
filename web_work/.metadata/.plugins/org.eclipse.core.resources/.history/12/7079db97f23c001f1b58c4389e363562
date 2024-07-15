@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>기본정보 입력</h1>
+	<table border="1" width="800">
+		<tbody>
+			<tr>
+				<td width="200">이름</td>
+				<td height ="30">
+					<form action="">
+						<input type="text" name="username" style="display : grid;">
+					</form>
+				</td>
+			</tr>	
+			<tr>
+				<td width="200">아이디</td>
+				<td height ="30" style="display : flex;">
+					<form action="">
+						<input type="text" name="username" style="display : grid;">
+						<button>중복체크</button>
+					</form>
+				</td>
+			</tr>	
+			<tr>
+				<td width="200">이름</td>
+				<td height ="30">
+					<form action="">
+						<input type="text" name="username" style="display : grid;">
+					</form>
+				</td>
+			</tr>	
+			<tr>
+				<td width="200">이름</td>
+				<td height ="30">
+					<form action="">
+						<input type="text" name="username" style="display : grid;">
+					</form>
+				</td>
+			</tr>	
+		</tbody>
+	</table>
+</body>
+</html>

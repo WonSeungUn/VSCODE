@@ -1,0 +1,9 @@
+package kosa.basic;
+
+public class Main {
+	public static void main(String[] args) {
+		String a = "°¡";
+		String b = "ÇÏ";
+		System.out.println(a.compareTo(b));
+	}
+}

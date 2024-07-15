@@ -1,0 +1,22 @@
+package kosa.mission;
+
+import java.util.Stack;
+
+public class StackMission {
+	public static void main(String[] args) {
+		// 키보드로부터 수학 수식을 입력
+		// ((2+3)+10) => 괄호가 일치하는지 불일치하는지 판단
+		Stack<String> stack = new Stack<String>();
+		
+		String input="((2+1))";
+		
+		for(char c : input.toCharArray()) {
+			//for문이 돌고 있는데 stack이 중간에 isEnpty거나
+			
+			System.out.println(stack.pop());
+		}
+		//for문이 끝났는데 stack이 isEmpty가 아니거나
+		
+	  
+	}
+}

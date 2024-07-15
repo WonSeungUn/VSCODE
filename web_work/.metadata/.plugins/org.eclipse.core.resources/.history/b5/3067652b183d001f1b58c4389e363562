@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="author" content="WonSeungEon">
+<meta charset="UTF-8">
+<title>HTML 숙제</title>
+<style type="text/css">
+	#divParent {
+		border: 1px solid #000;
+	}
+	div .divUnderP {
+		color: red;
+	}
+</style>
+</head>
+
+<body>
+	<header><h1>오늘의 교훈</h1></header>
+	<ol>
+		<li><mark>공부는 미루지말자</mark></li>
+		<li><strong>할 수 있다면 예습을 해보자</strong></li>
+		<li><span style="color : red;'">복습은 꾸준히 하자!</span></li>
+	</ol>
+	
+	<div id="divParent" >
+		<p class="divUnderP">안녕</p>
+		<p class="divUnderP">나는</p>
+		<p class="divUnderP">빨강 글씨야</p>
+	</div>
+	
+	<ul>
+		<li>FRONT-END</li>
+		<li>BACK-END</li>		
+		<li>DB</li>
+	</ul>
+</body>
+</html>

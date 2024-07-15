@@ -1,0 +1,24 @@
+package kosa.thread;
+
+public class PrintThread extends Thread {
+	SharedArea sharedArea;
+	PrintThread() {
+		
+	}
+	public PrintThread(SharedArea sharedArea) {
+		this.sharedArea = sharedArea;
+	}
+	
+	public void run() {
+		for(int cnt = 0 ; cnt <3 ; cnt++) {
+			int sum = sharedArea.account1.getBalance() + sharedArea.account2.getBalance();
+			System.out.println("°èÁÂ ÀÜ¾× ÇÕ°è : " + sum);
+			try {
+				Thread.sleep(1);
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+	}
+	
+}
