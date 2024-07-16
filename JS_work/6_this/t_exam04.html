@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="text/javascript">
+    var data = 'Global data'    // window 객체 소속
+
+    var obj1 = {data : 'obj1 data'};
+    var obj2 = {data : 'obj2 data'};
+    
+    function func() {   
+    console.log(this.data);
+    }
+
+    // function func(a, b, c) {   
+    // console.log(this.data);
+    // }
+    func();
+    func.apply(obj1);   // argument를 리스트로 입력해야 한다.
+    // func.apply(obj1, [2,3,4]);   // 함수에 파라미터가 존재하는 경우 : argument를 리스트로 입력해야 한다.
+    func.call(obj2);    // call -> .(콤마)를 기반으로 argument 순서대로 넘겨준다. 
+    // func.call(obj2,2,3,4);    // call -> .(콤마)를 기반으로 argument 순서대로 넘겨준다. 
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
