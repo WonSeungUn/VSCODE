@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+  </head>
+
+  <body>
+    <label>출발역</label>
+    <select id="start"></select>
+    <label>도착역</label>
+    <select id="end"></select>
+    <label
+      ><input type="radio" name="group" value="ADULT" checked /> 성인일반</label
+    >
+    <label><input type="radio" name="group" value="YOUNG" /> 청소년</label>
+    <label><input type="radio" name="group" value="CHILD" /> 어린이</label>
+    <div>
+      <button onclick="calculate();">요금계산</button>
+    </div>
+    <div
+      id="output"
+      style="
+        width: 100%;
+        height: 150px;
+        overflow-y: auto;
+        border: 2px solid #222;
+      "
+    ></div>
+    <script>
+      const subwayList = [
+        "영등포구청역",
+        "당산역",
+        "합정역",
+        "홍대입구역",
+        "신촌역",
+        "이대역",
+        "아현역",
+        "충정로역",
+        "시청역",
+        "을지로3가역",
+        "을지로4가역",
+        "동대문역사문화공원역",
+        "신당역",
+        "상왕십리역",
+        "왕십리역",
+        "한양대역",
+        "뚝섬역",
+        "성수역",
+        "건대입구역",
+        "구의역",
+        "강변역",
+        "잠실나루역",
+        "잠실역",
+        "종합운동장역",
+        "삼성역",
+        "선릉역",
+        "역삼역",
+        "강남역",
+        "서초역",
+        "방배역",
+        "사당역",
+        "낙성대역",
+        "서울대입구역",
+        "봉천역",
+        "신림역",
+        "신대방역",
+        "구로디지털단지역",
+        "대림역",
+        "신도림역",
+        "문래역",
+      ];
+      
+      function calculate() {
+          let start = document.getElementById('start');                                               // 출발역
+          let end = document.getElementById('end');                                                   // 도착역 
+          let startvalue = parseInt(start.options[start.selectedIndex].value);                        // 출발역 인덱스 번호
+          let endvalue = parseInt(end.options[end.selectedIndex].value);                              // 도착역 인덱스 번호    
+          const intervalDistance = 3170;                                                              // 역간 거리(고정)
+          let age = document.querySelector('input[type=radio][name=group]:checked').value;            // 연령대 
+          let ageAmount = (age=='ADULT' ? 1250 : age =='YOUNG' ? 720 : age == 'CHILD' ? 450 : 0);     // 연령대별 기본요금       
+          let distance = Math.abs(startvalue - endvalue) * intervalDistance;                          // 출발역과 도착역간의 거리 
+          const output  = document.getElementById('output');
+         
+          if(startvalue == endvalue) {
+            output.innerHTML = `<p>출발역과 종착역이 같으니 출발역과 종착역을 다르게 선택해주세요.</p>`;
+          } else{
+            // 연령대별 기본요금 구하기 
+            if(distance < 10000) {
+              ageAmount;
+            } else if(distance <= 50000) {
+              ageAmount = ageAmount + Math.ceil((distance-10000) /5000) *100;
+              
+            } else {
+              ageAmount = ageAmount + 800 + Math.ceil((distance-50000)/8000) * 100;
+              
+            }
+            
+            output.innerHTML = ageAmount; 
+
+          }
+
+
+      }
+      
+      
+      /**
+       * 지하철 목록을 출발역과 도착역 select 태그에 추가합니다.
+       */
+      function loadSubways() {
+        var h = [];
+        for (var idx in subwayList) {
+          h.push(`<option value="${idx}">${subwayList[idx]}</option>`);
+        }
+
+        document.getElementById("start").innerHTML = h.join("");
+        document.getElementById("end").innerHTML = h.join("");
+      }
+
+      window.addEventListener("load", function () {
+        loadSubways();
+      });
+    </script>
+  </body>
+</html>
